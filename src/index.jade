@@ -1,0 +1,38 @@
+doctype html
+head
+  meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+  link(rel='stylesheet', href='css/main.css')
+
+  script(src='js/bundle.js')
+
+  body(layout='column')
+
+    md-toolbar
+      h1.md-toolbar-tools(layout-align-gt-sm='center') Taksim Muradiye Öğrenci Yurdu
+
+    #header
+      md-toolbar.md-tall(md-scroll-shrink layout='row' flex)
+        .md-toolbar-tools(layout-align='center')
+          md-button(href='tel:0 212 235 23 72') 0(212) 235 23 72
+          md-button.no-text-transform(href='mailto:bilgi@muradiye.tk') bilgi@muradiye.tk
+
+    #content(layout='column', flex)
+
+      md-card
+        iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.482871336824!2d28.988765644425406!3d41.03656837162566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x7a0538bf1ebfdf2e!2zVGFrc2ltIE11cmFkaXllIFnDvGtzZWsgw5bEn3JlbmltIEVya2VrIMOWxJ9yZW5jaSBZdXJkdQ!5e0!3m2!1str!2s!4v1433848492156' height='450' frameborder='0' style='border:0')
+        md-card-content
+          h2.md-title İletişim
+          p
+            | Kocatepe Mh. Feridiye Cd. Aşıklar Sk. No: 10
+            br
+            | Beyoğlu, İstanbul
+
+      md-card
+        img(src='pattern.png')
+        md-card-content(flex)
+          h2.md-title Duyurular
+          p
+            | 2014 - 2015 yılı kontenjanlarımız dolmuştur. İlginize teşekkür ederiz.
+            br
+            small 14.09.2014
+
