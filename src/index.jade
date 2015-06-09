@@ -1,16 +1,17 @@
 doctype html
 head
   meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
-  link(rel='stylesheet', href='css/main.css')
   meta(name='viewport' content='initial-scale=1')
-
+  link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic')
+  link(rel='stylesheet', href='css/main.css')
   script(src='js/bundle.js')
 
-  body(layout='column')
+  body
 
-    md-toolbar
-      h1.md-toolbar-tools(layout-align='center') Taksim Muradiye Erkek Öğrenci Yurdu
-
+    md-toolbar.md-tall
+      span(flex)
+      .md-toolbar-tools.md-toolbar-tools-bottom(layout='column' layout-align='center')
+        span Taksim Muradiye Erkek Öğrenci Yurdu
     #header
       md-toolbar.md-tall(md-scroll-shrink layout='row' flex)
         .md-toolbar-tools(layout-align='center')
