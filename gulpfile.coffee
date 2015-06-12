@@ -18,6 +18,7 @@ streamify    = require 'gulp-streamify'
 stylus       = require 'gulp-stylus'
 uglify       = require 'gulp-uglify'
 watchify     = require 'watchify'
+markdown     = require 'gulp-markdown'
 
 production   = process.env.NODE_ENV is 'production'
 
@@ -43,6 +44,10 @@ config =
     source: './bower_components/**/*.*'
     watch: './bower_components/**/*.*'
     destination: './public/lib/'
+  markdown:
+    source: './src/views/**/*.md'
+    watch: './src/views/**/*.md'
+    destination: './public/views/'
 
 handleError = (err) ->
   gutil.log err
@@ -111,11 +116,19 @@ gulp.task 'server', ->
     server:
       baseDir: './public'
 
+gulp.task 'markdown', ->
+  pipeline = gulp.src config.markdown.source
+        .pipe markdown()
+        .pipe (gulp.dest config.markdown.destination)
+
+  pipeline = pipeline.pipe browserSync.reload(stream: true) unless production
+
 gulp.task 'watch', ->
   gulp.watch config.templates.watch, interval: 500, ['templates']
   gulp.watch config.styles.watch, interval: 500, ['styles']
   gulp.watch config.assets.watch, interval: 500, ['assets']
   gulp.watch config.bower.watch, interval: 500, ['bower']
+  gulp.watch config.markdown.watch, interval: 500, ['markdown']
 
   bundle = watchify browserify
     entries: [config.scripts.source]
