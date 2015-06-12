@@ -153,7 +153,7 @@ gulp.task 'watch', ->
 
   .emit 'update'
 
-gulp.task 'no-js', ['templates', 'styles', 'assets', 'bower']
+gulp.task 'no-js', ['templates', 'markdown', 'styles', 'assets', 'bower']
 gulp.task 'build', ['scripts', 'no-js']
 # scripts and watch conflict and will produce invalid js upon first run
 # which is why the no-js task exists.
