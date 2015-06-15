@@ -19,6 +19,8 @@ stylus       = require 'gulp-stylus'
 uglify       = require 'gulp-uglify'
 watchify     = require 'watchify'
 markdown     = require 'gulp-markdown'
+ghPages      = require 'gulp-gh-pages'
+ngAnnotate   = require 'gulp-ng-annotate'
 
 production   = process.env.NODE_ENV is 'production'
 
@@ -65,7 +67,8 @@ gulp.task 'scripts', ->
     .on 'error', handleError
     .pipe source config.scripts.filename
 
-  build.pipe(streamify(uglify())) if production
+  build.pipe (streamify ngAnnotate())
+    .pipe (streamify uglify()) if production
 
   build
     .pipe gulp.dest config.scripts.destination
@@ -122,6 +125,10 @@ gulp.task 'markdown', ->
         .pipe (gulp.dest config.markdown.destination)
 
   pipeline = pipeline.pipe browserSync.reload(stream: true) unless production
+
+gulp.task 'deploy', ['build'], () ->
+  gulp.src './public/**/*'
+    .pipe ghPages()
 
 gulp.task 'watch', ->
   gulp.watch config.templates.watch, interval: 500, ['templates']
