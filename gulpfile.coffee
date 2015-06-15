@@ -41,8 +41,8 @@ config =
     watch: './src/styles/*.styl'
     destination: './public/css/'
   assets:
-    source: './src/assets/**/*.*'
-    watch: './src/assets/**/*.*'
+    source: './src/assets/**/*'
+    watch: './src/assets/**/*'
     destination: './public/'
   bower:
     source: './bower_components/**/*.*'
