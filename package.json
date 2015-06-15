@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Web app for muradiye.tk.",
   "author": "İsmail Demirbilek <ce.demirbilek@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/muradiye/web.git"
+  },
   "license": "",
   "main": "gulpfile.js",
   "scripts": {

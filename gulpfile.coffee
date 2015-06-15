@@ -1,7 +1,8 @@
 # Source: https://github.com/leonidas/gulp-project-template
+pkg          = require './package.json'
 browserify   = require 'browserify'
 browserSync  = require 'browser-sync'
-chalk             = require 'chalk'
+chalk        = require 'chalk'
 CSSmin       = require 'gulp-minify-css'
 ecstatic     = require 'ecstatic'
 filter       = require 'gulp-filter'
@@ -21,6 +22,7 @@ watchify     = require 'watchify'
 markdown     = require 'gulp-markdown'
 ghPages      = require 'gulp-gh-pages'
 ngAnnotate   = require 'gulp-ng-annotate'
+url          = require 'url'
 
 production   = process.env.NODE_ENV is 'production'
 
@@ -127,8 +129,12 @@ gulp.task 'markdown', ->
   pipeline = pipeline.pipe browserSync.reload(stream: true) unless production
 
 gulp.task 'deploy', ['build'], () ->
+  remoteUrl = url.parse pkg.repository.url
+  # Add travis secure to remote url
+  options =
+    remoteUrl: "#{remoteUrl.protocol}//#{process.env.GH_TOKEN}@#{remoteUrl.host}#{remoteUrl.pathname}"
   gulp.src './public/**/*'
-    .pipe ghPages()
+    .pipe ghPages(options)
 
 gulp.task 'watch', ->
   gulp.watch config.templates.watch, interval: 500, ['templates']

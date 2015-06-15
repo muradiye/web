@@ -1,8 +1,13 @@
 language: node_js
 node_js:
-  - "0.12"
+- '0.12'
 before_install:
 - npm install -g bower gulp-cli
 after_success:
-  - export NODE_ENV='production'
-  - gulp deploy
+- git config --global user.name "Travis CI"
+- git config --global user.email "$GH_TOKEN"
+- export NODE_ENV='production'
+- gulp deploy
+env:
+  global:
+    secure: JKXcFH70Fl7hDSG8jPtB/e6qJK43CzTGQwwyHHMPJxmFv4rdZGzv5Xr3cAPoRaL5NWUO6s8HuDaaKoaCWMGdOql0L7GqZctB63wsoqT7Vgmh2iPSBi8GthzhtJtLCIBkTWpR6YSslojgeOIr5VC/O09QXvlViSTBB5O8pHikAJvIYWyku4G+p9U/OgCGyqB9vZzrv4Y3S57soELk1Gn2OEHd6eRSvZ2ZM32AVV5nyz2mi8hzll1lrw3F9pO0Da/Z6o4syTJvheYo0Hz5zEdmksrh1cdZxMPUnJgVw+lsALuuRVdUYTxK2iIGCMJqQsPFIQDkjV/htir116JoA+82BmfHcLs22jUrRvW8ZLjs+wDycP+YjPAoadausXnDZ0MYOTtIDZNCQILvdAppKbATacYTcozpjieHLbmdntwQYigzYMgBMUT+HuDFl3994ciBDag0zhYAYdV+fGCX3RukCgG/GvfHVJQ3mAIk8C0vxr+4aVo8Z1iquOj9lofkKm+GJNFjOVjqT7MTVvjR/Ifjk1pugHdwN1rmdXFH325tCn6cIu16ojQjZvQdYn4+e4MwxIjmpNla0v+0H1Qilt4bqJau7qwuXqeRYHDTzUF73dxoowJaEPv3OR7Z2kwJYq0QOb7Q2tm7uqxx8tZoIRW6vpRY8CLsrpPtmWUcra4OVD0=
