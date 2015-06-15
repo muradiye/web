@@ -2,10 +2,7 @@ language: node_js
 node_js:
   - "0.12"
 before_install:
-- npm install -g bower gulp-cli karma-cli
+- npm install -g bower gulp-cli
 after_success:
+  - export NODE_ENV='production'
   - gulp deploy
-env:
-  global:
-    NODE_ENV: 'production'
-
