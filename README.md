@@ -1,7 +1,7 @@
 # muradiye-web
 Web app for [muradiye.tk](http://muradiye.tk).
 
-![muradiye-logo](../../blob/master/src/assets/logo.png?raw=true)
+![muradiye-logo](../../blob/master/src/assets/images/logo.png?raw=true)
 
 # Tech
 This project is made possible with followings:
