@@ -3,7 +3,7 @@ Web app for [muradiye.tk](http://muradiye.tk).
 
 ![muradiye-logo](../../blob/master/src/assets/images/logo.png?raw=true)
 
-# Tech
+### Tech
 This project is made possible with followings:
 - CoffeeScript
 - Jade
@@ -14,30 +14,30 @@ This project is made possible with followings:
 - And many other cool stuff.
 
 
-# Development
-## Dependencies
+### Development
+#### Dependencies
 ```bash
  $ npm install
 ```
 
-## Run
+#### Run
 ```$
  $ npm start
 ```
 
-## Deploy
+#### Deploy
 To deploy application to [Github Pages](https://pages.github.com/) automatically run:
 ```$
  $ gulp deploy
 ```
 
-## Continous Integration
+#### Continous Integration
 Continuos integration & delivery is set up on Travis CI. Application is being **build, tested & deployed** simultaneously through Gulp tasks on Travis CI.
 
 To see what's happening visit Travis CI project page [here](https://travis-ci.org/muradiye/web).
 
-# Author
+### Author
 İsmail Demirbilek - [@dbtek](https://twitter.com/dbtek)
 
-# License
+### License
 This project is published under [MIT](https://opensource.org/licenses/MIT). You are free to use, modify, distribute it.
