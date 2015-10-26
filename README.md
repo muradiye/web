@@ -1,4 +1,4 @@
-# muradiye-web
+# muradiye-web [![Build Status](https://travis-ci.org/muradiye/web.svg?branch=master)](https://travis-ci.org/muradiye/web)
 Web app for [muradiye.tk](http://muradiye.tk).
 
 ![muradiye-logo](../../blob/master/src/assets/images/logo.png?raw=true)
