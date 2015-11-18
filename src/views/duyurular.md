@@ -1,4 +1,4 @@
 ## Duyurular
 
-- 2014 - 2015 yılı kontenjanlarımız dolmuştur. İlginize teşekkür ederiz.  
-  14.09.2014
+- 2015 - 2016 yılı kontenjanlarımız dolmuştur. İlginize teşekkür ederiz.  
+  18.10.2015
