@@ -30,6 +30,10 @@ head
     ng-include(src='"views/header.html"')
 
     #content(layout='column', flex)
+      // kermes
+      md-card.about
+        md-card-content(flex ng-include='"views/kermes.html"')
+
       md-card.about
         md-card-content(flex ng-include='"views/hakkimizda.html"')
 
