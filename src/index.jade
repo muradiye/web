@@ -24,14 +24,27 @@ head
   link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic')
   link(rel='stylesheet', href='css/main.css')
   script(src='js/bundle.js')
+  script(type="application/ld+json").
+    {
+       "@context": "http://schema.org",
+       "@type": "Organization",
+       "url": "http://muradiye.tk",
+       "contactPoint": [{
+         "@type": "ContactPoint",
+         "telephone": "+90-212-235-2372",
+         "email": "bilgi@muradiye.tk",
+         "contactType": "customer service"
+       }],
+      "logo": "http://muradiye.tk/images/logo.png",
+      "address": "Kocatepe Mh. Feridiye Cd. Aşıklar Sk. No: 10, Taksim, İstanbul"
+    }
 
   body
 
     ng-include(src='"views/header.html"')
 
     #content(layout='column', flex)
-      // kermes
-      md-card.about
+      // md-card.about
         md-card-content(flex ng-include='"views/kermes.html"')
 
       md-card.about
